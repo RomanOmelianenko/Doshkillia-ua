@@ -122,7 +122,8 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
 }
 
 .main__tabs-title-1 {
-  color: #5093b3;
+  /* color: #5093b3; */
+  color: #101066;
 }
 
 .main__tabs-item {
@@ -163,7 +164,8 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
 
 .main__tabs-title-2 {
   /* color: #fecd4c; */
-  color: #f7e6ca;
+  /* color: #f7e6ca; */
+  color: #101066;
 }
 
 .main__title-h3 {
@@ -411,7 +413,8 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
 
 /* Footer */
 .footer {
-  background-color: #030102;
+  /* background-color: #313131; */
+  background-color: #313131;
   padding: 4rem 0;
 }
 
@@ -432,7 +435,25 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
 .footer__address {
   color: grey;
   font-size: 2rem;
+  margin-bottom: 2rem;
   /* font-family: "Roboto", sans-serif; */
+}
+
+/* .header__socials {
+  display: flex;
+} */
+
+.header__socials-icon img {
+  /* display: block;
+  width: 3rem;
+  height: 3rem; */
+  opacity: .5;
+}
+
+.header__socials-icon img:hover {
+  transform: scale(1.1);
+  transition: .3s;
+  opacity: 1;
 }
 
 /* Tabs */

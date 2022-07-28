@@ -41,8 +41,9 @@ function clickTab() {
             case '#tab-1':
               // headerBackgroundColor.style.backgroundColor = '#f7e6ca';
               // headerBackgroundColor.style.backgroundColor = 'rgba(247, 230, 202, 0.5)';         
-              headerBackgroundColor.style.background ="#d6d7d1"; 
-              // headerBackgroundColor.style.backgroundColor = '#d3d4ce';
+              // headerBackgroundColor.style.background ="#d6d7d1"; 
+              headerBackgroundColor.style.background = "#dedfd9";
+              // headerBackgroundColor.style.background = 'linear-gradient(to bottom, #fdfbfb, lightgrey)';
               // headerBackgroundColor.style.background = 'linear-gradient(to right, #828da1, #838b64, #dfe0da, #dfe0da)';     
               // item.style.backgroundColor = '#f7e6ca';
               // item.style.backgroundColor = '#d3b698';
@@ -65,6 +66,9 @@ function clickTab() {
             case '#tab-3':
               headerBackgroundColor.style.background = '#ffffe0';
               item.style.background = '#ffffe0';
+              // headerBackgroundColor.style.background = 'linear-gradient(to bottom, #ffffe0, #fff)';
+              // // item.style.backgroundColor = '#ffffe0';
+              // item.style.background = 'linear-gradient(to bottom, #fff, #ffffe0)';
               break;
     
             case '#tab-4':
@@ -76,7 +80,7 @@ function clickTab() {
     
             case '#tab-5':
               // headerBackgroundColor.style.backgroundColor = 'lightblue';
-              headerBackgroundColor.style.background = 'linear-gradient(to bottom, #add8e6, #69c7e6, #10ace0)';
+              headerBackgroundColor.style.background = 'linear-gradient(to top, #e6ecef, #add8e6, #69c7e6, #10ace0)';
               // item.style.backgroundColor = 'lightblue';
               item.style.background = 'linear-gradient(to bottom, #add8e6, #69c7e6, #10ace0)';
               break;
