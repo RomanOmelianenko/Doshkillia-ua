@@ -67,6 +67,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
   font-size: 3.2rem;
   /* font-family: "Roboto", sans-serif; */
   font-weight: 700;
+  color: #101066;
 }
 
 .header__nav .header__nav-list {
@@ -119,12 +120,12 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
   line-height: 1.2;
   font-weight: normal;
   text-align: center;
-}
-
-.main__tabs-title-1 {
-  /* color: #5093b3; */
   color: #101066;
 }
+
+/* .main__tabs-title-1 {
+  color: #101066;
+} */
 
 .main__tabs-item {
   padding: 6rem 15%;
@@ -162,11 +163,9 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
   margin-left: 2rem;
 }
 
-.main__tabs-title-2 {
-  /* color: #fecd4c; */
-  /* color: #f7e6ca; */
+/* .main__tabs-title-2 {
   color: #101066;
-}
+} */
 
 .main__title-h3 {
   text-align: center;
@@ -282,9 +281,9 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
 
 
 /* Main-tabs-3 */
-.main__tabs-title-3 {
+/* .main__tabs-title-3 {
   color: #101066;
-}
+} */
 /* .main__tabs-item div:not(:last-child) {
   margin-bottom: 4rem;
 } */
@@ -356,11 +355,11 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
 /* Main-tabs-4 */
 
 
-.main__tabs-title-4,
+/* .main__tabs-title-4,
 .main__tabs-title-5,
 .main__tabs-title-6 {
   color: #101066;
-}
+} */
 
 .main__tabs-4-list {
   margin: 0;
@@ -461,8 +460,8 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
   /* background-color: #5e3ddf; */
   /* border-right-color: #5e3ddf; */
   /* color: #040a0e; */
-  color: #000;
-  border-bottom: .3rem solid #080c25;
+  color: #302399;
+  border-bottom: .3rem solid #302399;
   padding-bottom: .3rem;
   /* text-shadow: 
     2px 2px 4pc yellow,
