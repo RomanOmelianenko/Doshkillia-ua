@@ -3,7 +3,6 @@ function clickTab() {
   const tabsItems = document.querySelectorAll('.main__tabs');
   const headerBackgroundColor = document.querySelector('.header');
   const mainBackgroundColor = document.querySelectorAll('.main__tabs-item');
-  // console.log(mainBackgroundColor);
 
   tabsBtn.forEach(onTabClick);
 
@@ -24,17 +23,11 @@ function clickTab() {
     
         currentBtn.classList.add('active');
         currentTab.classList.add('active');
-
-        
-        // if (currentBtn.classList.contains('active')) {
-        //   headerBackgrondColor.style.background = 'red';
-        // }
-
       };
       
       // Background-Color
       mainBackgroundColor.forEach(item => {
-        // console.log(item);
+        
         const currentItem = item.getAttribute('data-item-id');
         if (currentItem === tabId) {
           switch (currentItem) {
@@ -102,7 +95,7 @@ function clickTab() {
 
   // Имитация первого клика (триггер)
   document.querySelector('.tabs__nav-btn').click();
-  // document.querySelector('.tabs__nav-btn:nth-child(3)').click();
+  // document.querySelector('.tabs__nav-btn:nth-child(6)').click();
 };
 
 clickTab();
