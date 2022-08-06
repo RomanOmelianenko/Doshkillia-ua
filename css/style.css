@@ -428,6 +428,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
 .table {
   width: 96%;
   margin: 0 auto;
+  margin-bottom: 3rem;
 }
 
 .table__button {
@@ -497,6 +498,10 @@ tr th {
   padding: 1rem 1rem;
 }
 
+.table__theme {
+  width: 38rem;
+}
+
 th span {
   display: block;
 }
@@ -511,6 +516,16 @@ th span {
 .table__row td {
   padding: 1rem;
   font-size: 1.7rem;
+}
+
+.load-more-btn {
+  display: block;
+  font-size: 2rem;
+  padding: 1rem;
+  background-color: coral;
+  margin: 0 auto;
+  border-radius: 1rem;
+  /* background-color: transparent; */
 }
 
 /* Footer */
