@@ -510,6 +510,7 @@ th span {
 #id-number, 
 #form-qual,
 #date-cert,
+#volume-in-hours,
 #sequence_number {
   text-align: center;
 }

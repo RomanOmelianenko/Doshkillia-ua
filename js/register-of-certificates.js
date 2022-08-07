@@ -47,7 +47,7 @@ const loadTable = () => {
             <td>${name}</td>
             <td id="form-qual">${promotion_form}</td>
             <td>${promotion_topic}</td>
-            <td>${volume_in_hours}</td>
+            <td id="volume in hours">${volume_in_hours}</td>
             <td id="date-cert">${date_of_issue}</td>
             <td id="sequence_number">${account}</td>
           </tr>
