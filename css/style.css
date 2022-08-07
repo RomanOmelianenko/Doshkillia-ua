@@ -452,7 +452,8 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
   letter-spacing: .3rem;
 }
 
-.table__button button:hover {
+.table__button button:hover,
+.load-more-btn:hover {
   background-color: #00e0f0;
   transition: 200ms linear;
 }
@@ -522,9 +523,12 @@ th span {
   display: block;
   font-size: 2rem;
   padding: 1rem;
-  background-color: coral;
+  color: #fff;
+  background-color: #00ccce;
   margin: 0 auto;
+  border: 3px solid #00a7bf;
   border-radius: 1rem;
+  cursor: pointer;
   /* background-color: transparent; */
 }
 

@@ -94,8 +94,8 @@ function clickTab() {
   };
 
   // Имитация первого клика (триггер)
-  // document.querySelector('.tabs__nav-btn').click();
-  document.querySelector('.tabs__nav-btn:nth-child(6)').click();
+  document.querySelector('.tabs__nav-btn').click();
+  // document.querySelector('.tabs__nav-btn:nth-child(6)').click();
 };
 
 clickTab();
