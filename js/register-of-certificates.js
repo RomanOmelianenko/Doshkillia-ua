@@ -11,79 +11,69 @@ const loadTable = () => {
    // Используум пакет seamless-scroll-polyfill для кроссбраузерности (теперь во всех браузерах будет работать плавный скрол)
    seamless.polyfill();
 
-  // Load Year (2021, 2022)
+  // 1. Load Year (2021, 2022)
   tableButton.forEach((item) => {
-    item.addEventListener("click", () => {
+    item.addEventListener("click", (e) => {
+      // console.log(e.target.textContent);
+      // console.log(item);
 
-      if (item.classList.contains("year-2021-btn")) {
-        onButton2021(item);
-      } else if (item.classList.contains("year-2022-btn")) {
-        // onButton2022(item);
-      }
+      if (e.target.textContent === '2021' || e.target.textContent === '2022') {
+        onButton(item);
+        // console.log('2021', item);
+      } 
+      // else if (e.target.textContent === '2022') {
+      //   // console.log('click 2022');
+      //   onButton(item);
+      //   // console.log('2022', item);
+      // }
+
+      // if (item.classList.contains("year-2021-btn")) {
+      //   onButton2021(item);
+      // } else if (item.classList.contains("year-2022-btn")) {
+      //   // onButton2022(item);
+      // }
       
     });
   });
 
-  // Render Table
-  const renderTable = (data) => {
-    data.forEach((item) => {
-      localStorage.setItem("table", JSON.stringify(item));
+  // 2. Click Button (2021-2022)
+  const onButton = (item) => {
+    // if (item.classList.contains("year-2021-btn")) {
+      mainTable.style.display = "block";
 
-      const {
-        id,
-        name,
-        promotion_form,
-        promotion_topic,
-        volume_in_hours,
-        date_of_issue,
-        account,
-      } = item;
+      const currentBtn = item;
 
-      const tableRow = document.createElement("tr");
-      tableRow.classList.add("table__row");
-      tableRow.innerHTML = `
-          <tr>
-            <td id="id-number">${id}</td>
-            <td>${name}</td>
-            <td id="form-qual">${promotion_form}</td>
-            <td id="theme">${promotion_topic}</td>
-            <td id="volume-in-hours">${volume_in_hours}</td>
-            <td id="date-cert">${date_of_issue}</td>
-            <td id="sequence_number">${account}</td>
-          </tr>
-      `;
+      if (!currentBtn.classList.contains("active-btn")) {
+        tableButton.forEach((item) => {
+          item.classList.remove("active-btn");
+          item.disabled = false;
+        });
 
-      tbody.append(tableRow);
-      // console.log(tbody);
+        currentBtn.classList.add("active-btn");
+        item.disabled = true;
+      }
 
-      // Scroll
-      scroll();
-    });
+      getData(item);
+    // }
   };
 
-  // Change data array
-  const changeData = (data) => {
-    const startStack = (count - 1) * stack;
-    const endStack = stack * count; 
+  // 3. Get Certificate Array (2021 - 2022)
+  const getData = (item) => {
+    const itemTextContent = item.textContent;
+    // switch (item.textContent) {
+    //   case '2021': 
+    //     url = "./db/certificates-2021.json";
+    //     break;
 
-    renderTable(sliceArray(data, startStack, endStack));
+    //   case '2022': 
+    //     url = "./db/certificates-2022.json";
+    //     break;
 
-    if (data.length > endStack) {
-      count += 1;
-    } else {
-      loadMoreBtn.style.display = 'none';
-    }
-  };
+    //   default:
+    //     console.log('Жодна з умов не відповідає switch');
+    // };
 
-  // Slice array
-  const sliceArray = (data, start, end) => {
-    const newArray = data.slice(start, end);
-    return newArray;
-  };
-
-  // Get Certificate Array 2021
-  const getData2021 = () => {
-    const url = "./db/certificates-2021.json";
+    const url = `./db/certificates-${itemTextContent}.json`;
     fetch(url)
     .then((response) => {
       return response.json();
@@ -93,8 +83,69 @@ const loadTable = () => {
       //   throw new Error('Дані були завантаженні з помилкою!')
       // }
     })
-    .then((data) => changeData(data))
+    .then((data) => {
+      localStorage.setItem(`table-${itemTextContent}`, JSON.stringify(data));
+      changeData(itemTextContent);
+    })
     .catch((error) => console.log(error));
+  };
+
+  // 4. Change data array
+  const changeData = (itemTextContent) => {
+    // console.log(itemTextContent);
+    const dataLocalGet = JSON.parse(localStorage.getItem('table-2021'));
+    // console.log(dataLocalGet);
+
+    const startStack = (count - 1) * stack;
+    const endStack = stack * count; 
+
+    renderTable(sliceArray(dataLocalGet, startStack, endStack));
+
+    if (dataLocalGet.length > endStack) {
+      count += 1;
+    } else {
+      loadMoreBtn.style.display = 'none';
+    }
+  };
+
+  // 5. Slice array
+  const sliceArray = (data, start, end) => {
+    // console.log(data);
+    const newArray = data.slice(start, end);
+    return newArray;
+  };
+
+  // 6. Render Table
+  const renderTable = (data) => {
+    // console.log(data);
+    
+    if (localStorage.getItem('table-2021')) {
+      // console.log('дані є');
+      data.forEach((item) => {
+
+        const { id, name, promotion_form, promotion_topic, volume_in_hours, date_of_issue, account } = item;
+  
+        const tableRow = document.createElement("tr");
+        tableRow.classList.add("table__row");
+        tableRow.innerHTML = `
+            <tr>
+              <td id="id-number">${id}</td>
+              <td>${name}</td>
+              <td id="form-qual">${promotion_form}</td>
+              <td id="theme">${promotion_topic}</td>
+              <td id="volume-in-hours">${volume_in_hours}</td>
+              <td id="date-cert">${date_of_issue}</td>
+              <td id="sequence_number">${account}</td>
+            </tr>
+        `;
+  
+        tbody.append(tableRow);
+  
+        scroll();
+      });
+    } else {
+      // console.log('дані відсутні');
+    }
   };
 
   // Get Certificate Array 2022
@@ -112,27 +163,6 @@ const loadTable = () => {
   //   .then((data) => changeData(data))
   //   .catch((error) => console.log(error));
   // };
-
-  // Click Button-2021
-  const onButton2021 = (item) => {
-    // if (item.classList.contains("year-2021-btn")) {
-      mainTable.style.display = "block";
-
-      const currentBtn = item;
-
-      if (!currentBtn.classList.contains("active-btn")) {
-        tableButton.forEach((item) => {
-          item.classList.remove("active-btn");
-          item.disabled = false;
-        });
-
-        currentBtn.classList.add("active-btn");
-        item.disabled = true;
-      }
-
-      getData2021();
-    // }
-  };
 
   // Click Button-2022
   // const onButton2022 = (item) => {
@@ -175,7 +205,7 @@ const loadTable = () => {
     // }
   };
 
-  loadMoreBtn.addEventListener('click', getData2021);
+  loadMoreBtn.addEventListener('click', changeData);
 };
 
 loadTable();

@@ -5,12 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="./assets/img/logo.jpg" type="image/x-icon">
+  <!-- <link rel="icon" href="https://scontent.fiev13-1.fna.fbcdn.net/v/t1.18169-1/11816973_435450046644295_2953020856579080370_n.jpg?stp=c1.0.40.40a_cp0_dst-jpg_p40x40&_nc_cat=102&ccb=1-7&_nc_sid=1eb0c7&_nc_ohc=XTTNElkXer0AX8fm3Bm&_nc_ht=scontent.fiev13-1.fna&oh=00_AT_Dg-Y9lLCiwF3JbCuSLv-AAkDWeNVfNSSJKX5aj57-Kg&oe=631E9246" type="image/x-icon"> -->
   <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;2,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/style.css">
   <script src="./js/app.js" defer></script>
-  <script src="./js/register-of-certificates.js" defer></script>
+  <script src="./js/load-certificates.js" defer></script>
   <script src="./js/scrollToTop.js" defer></script>
   <title>Курси підвищення кваліфікації в Україні | Doshkillia.kurs.ua</title>
 </head>
@@ -586,10 +587,11 @@
         <h2 class="main__tabs-title-6 main__title">Реєстр сертифікатів</h2>
         <div class="main__tabs-item tabs__item-6" data-item-id="#tab-6">
           <!-- Table -->
-          <h2 class="table__title">Завантажити список сертіфікатів за ...</h3>
+          <h2 class="table__title">Завантажити список сертіфікатів за 2021 - 2022 роки</h3>
           <div class="table__button">
-            <button type="button" class="year-2022-btn">2022</button>
-            <button type="button" class="year-2021-btn">2021</button>
+            <!-- <button type="button" class="year-2022-btn">2022</button>
+            <button type="button" class="year-2021-btn">2021</button> -->
+            <button type="button" class="year-2021-btn">Завантажити</button>
           </div>
           <div class="main__table">
             <div class="table__title">
@@ -599,7 +601,7 @@
               <tbody class="tbody">
                 <thead class="table__head">
                   <tr>
-                    <th colspan="7">2021 рік</th>
+                    <th colspan="7">2021 - 2022 роки</th>
                   </tr>
                   <tr>
                     <th>№<br>п/п</br></th>
@@ -615,16 +617,56 @@
                     <th>Обліковий<br>запис</br></th>
                   </tr>
                 </thead>
-                <!-- <tr class="main__table-row">
-                  <td>Халамай Ірина Миколаївна</td>
-                  <td>дистанційна</td>
-                  <td>Вольовий розвиток дітей дошкідьного віку</td>
-                  <td>15/0,5 кредиту ЄКТС</td>
-                  <td>29.04.2021</td>
-                  <td>ПК № 000001</td>
-                </tr> -->
               </tbody>
             </table>
+            <!-- <div id="table-2021" data-table-2021="2021">
+              <table class="table">
+                <tbody class="tbody">
+                  <thead class="table__head">
+                    <tr>
+                      <th colspan="7">2021 рік</th>
+                    </tr>
+                    <tr>
+                      <th>№<br>п/п</br></th>
+                      <th>ПІБ</th>
+                      <th>Форма<span>підвищення</span><span>кваліфікації</span></th>
+                      <th class="table__theme">Тема підвищення<br>кваліфікації</br></th>
+                      <th>Обсяг у годинах</th>
+                      <th>Дата видачі
+                        <span>сертифіката</span>
+                        <span>про підвищення</span>
+                        <span>кваліфікації</span>
+                      </th>
+                      <th>Обліковий<br>запис</br></th>
+                    </tr>
+                  </thead>
+                </tbody>
+              </table>
+            </div>
+            <div id="table-2022" data-table-2021="2022">
+              <table class="table">
+                <tbody class="tbody">
+                  <thead class="table__head">
+                    <tr>
+                      <th colspan="7">2022 рік</th>
+                    </tr>
+                    <tr>
+                      <th>№<br>п/п</br></th>
+                      <th>ПІБ</th>
+                      <th>Форма<span>підвищення</span><span>кваліфікації</span></th>
+                      <th class="table__theme">Тема підвищення<br>кваліфікації</br></th>
+                      <th>Обсяг у годинах</th>
+                      <th>Дата видачі
+                        <span>сертифіката</span>
+                        <span>про підвищення</span>
+                        <span>кваліфікації</span>
+                      </th>
+                      <th>Обліковий<br>запис</br></th>
+                    </tr>
+                  </thead>
+                </tbody>
+              </table>
+            </div> -->
             <button class="load-more-btn" type="button">Завантажити ще</button>
           </div>
 
