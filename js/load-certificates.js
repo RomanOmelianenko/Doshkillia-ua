@@ -46,7 +46,12 @@ const loadTable = () => {
         count += 1;
       } else {
         loadMoreBtn.style.display = 'none';
-      }
+        // loadMoreBtn.disabled = true;
+        // loadMoreBtn.textContent = 'Всі сертифікати завантажені'
+        mainTable.insertAdjacentHTML('beforeend', `
+          <p class="after-btn-loadmore">Всі сертифікати завантажені</p>
+        `);
+      };
   };
 
   // 4. Slice array
