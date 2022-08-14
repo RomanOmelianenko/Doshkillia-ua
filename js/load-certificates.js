@@ -4,7 +4,7 @@ const loadTable = () => {
   const tableButton = document.querySelector(".table__button button");
   const loadMoreBtn = document.querySelector(".load-more-btn");
 
-  let stack = 100;
+  let stack = 50;
   let count = 1;
 
   // Используум пакет seamless-scroll-polyfill для кроссбраузерности (теперь во всех браузерахбудет работать плавный скрол)
@@ -73,7 +73,7 @@ const loadTable = () => {
       `;
 
       tbody.append(tableRow);
-    })
+    });
 
     scroll();
   };
