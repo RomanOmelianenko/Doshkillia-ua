@@ -22,10 +22,16 @@ const loadTable = () => {
   // 2. Get Certificate Array (2021 - 2022)
   const getData = () => {
 
-    const url = './db/certificates-2021-2022.json';
+    // const url = './db/certificates-2021-2022.json';
+    const url = 'https://doshkillia-ua-default-rtdb.europe-west1.firebasedatabase.app/db.json'
     fetch(url)
     .then((response) => {
-      return response.json();
+      if (response.ok) {
+       return response.json();
+      } else {
+        throw new Error('Дані були завантаженні з помилкою!')
+      }
+      // return response.json();
     })
     .then((data) => {
       localStorage.setItem('table-2021-2022', JSON.stringify(data));
