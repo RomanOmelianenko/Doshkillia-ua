@@ -3,6 +3,9 @@ const loadTable = () => {
   const tbody = document.querySelector(".tbody");
   const tableButton = document.querySelector(".table__button button");
   const loadMoreBtn = document.querySelector(".load-more-btn");
+  const loader = document.getElementById('fountainG');
+
+  loadMoreBtn.style.visibility = 'hidden';
 
   let stack = 50;
   let count = 1;
@@ -30,12 +33,16 @@ const loadTable = () => {
        return response.json();
       } else {
         throw new Error('Дані були завантаженні з помилкою!')
-      }
+      };
       // return response.json();
     })
     .then((data) => {
-      localStorage.setItem('table-2021-2022', JSON.stringify(data));
-      changeData();
+      if (data) {
+        localStorage.setItem('table-2021-2022', JSON.stringify(data));
+        changeData();
+        loader.style.display = 'none';
+        loadMoreBtn.style.visibility = 'visible';
+      };
     })
     .catch((error) => console.log(error));
   };
