@@ -462,6 +462,12 @@ tr th {
   padding: 1rem .6rem;
 }
 
+tbody tr:hover {
+  cursor: pointer;
+  /* background-color: #00e0f0; */
+  background-color: #00e0f08e;
+}
+
 .table__theme {
   width: 38rem;
 }
@@ -484,7 +490,7 @@ th span {
 
 .table__row td {
   padding: .6rem;
-  font-size: 1.7rem;
+  font-size: 1.6rem;
 }
 
 .load-more-btn {
